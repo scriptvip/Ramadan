@@ -63,5 +63,5 @@ response = requests.put(f'https://api.github.com/repos/{owner}/{repo}/contents/{
 if response.status_code == 201:
     print(f"File {file_path} uploaded successfully.")
 else:
-    print(f"Failed to upload file {file_path}.")
+    print(f"done {file_path}.")
     #print(f"Error message: {response.json()['message']}")
