@@ -11,10 +11,6 @@ def get_wlans():
         wlans_ssid.append(wlans[index][wlans[index].find(":")+1:].strip())
     #print(wlans_ssid)
 
-    password=subprocess.run(f"netsh wlan show profile {wlans_ssid[0]} key=clear" ,shell=True , stdout=subprocess.PIPE).stdout.decode()
-    password=password[password.find("Key Content"):]
-    password=password[password.find(":")+1:password.find("\n")].strip()
-
     passwords=[]
     for i, index in zip(wlans_ssid, range(len(wlans_ssid))):
         passw=""
