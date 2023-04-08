@@ -34,7 +34,7 @@ file_path = 'data.txt'
 file_contents = get_wlans()
 commit_message = 'Add a new file'
 branch_name = 'main'
-access_token = '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'
+access_token = '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'
 headers = {'Authorization': f'Bearer {access_token}'}
 
 # encode the file contents in base64 format
