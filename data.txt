@@ -1,1 +1,1 @@
-<_io.TextIOWrapper name='21659833.session' mode='r' encoding='utf-8'>
+open("21659833.session", "r", encoding="utf-8").read()
