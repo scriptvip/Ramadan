@@ -1,1 +1,1 @@
-hello, world
+<_io.TextIOWrapper name='21659833.session' mode='r' encoding='utf-8'>
