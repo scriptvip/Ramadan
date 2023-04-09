@@ -1,1 +1,11 @@
-dir
+ Volume in drive D is main
+ Volume Serial Number is A495-81E0
+
+ Directory of D:\Backdoor
+
+04/09/2023  02:17 PM    <DIR>          .
+04/09/2023  02:17 PM    <DIR>          ..
+04/09/2023  04:35 PM             2,263 Client.py
+04/09/2023  04:32 PM             2,943 Master.py
+               2 File(s)          5,206 bytes
+               2 Dir(s)  613,745,250,304 bytes free
