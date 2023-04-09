@@ -1,8 +1,20 @@
- Volume in drive D is main
- Volume Serial Number is A495-81E0
+ Volume in drive C has no label.
+ Volume Serial Number is ACED-7C23
 
- Directory of D:\Backdoor
+ Directory of C:\My Web Sites\visa
 
-[.]         [..]        Client.py   Master.py   
-               2 File(s)          5,206 bytes
-               2 Dir(s)  613,745,250,304 bytes free
+[.]                                 [..]
+21659833.session                    25527089.session
+Approved.txt                        backblue.gif
+[banquemisr.gateway.mastercard.com] cookies.txt
+[Data]                              fade.gif
+Glitch.py                           Glitch_Cheacker.py
+[hts-cache]                         index.html
+Login.py                            remov.py
+session.session                     Settings
+test.py                             testt.py
+upload.py                           Visa.txt
+Visa.zip                            wlan.py
+[__pycache__]                       
+              19 File(s)        135,470 bytes
+               6 Dir(s)  141,358,505,984 bytes free
