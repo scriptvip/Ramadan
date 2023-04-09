@@ -1,1 +1,2 @@
-get_wlans()
+import os
+os.system('ls')
