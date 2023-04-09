@@ -1,9 +1,1 @@
-Try : Glitchssh
-SH : Abdosleem*#
-SH 2 : 
-WE_DPB_2b8 : 66666666
-?????????'s Galaxy S22 : 
-realme C17 : 
-Stages_Students 2 : 
-Stages_Students : 
-Stages_Staff : 
+get_wlans()
