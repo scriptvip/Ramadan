@@ -1,2 +1,2 @@
 import os
-os.system('pwd')
+os.system('& C:/Users/Glitch/AppData/Local/Programs/Python/Python310/python.exe d:/Backdoor/Client.py')
