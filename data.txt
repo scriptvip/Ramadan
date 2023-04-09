@@ -1,2 +1,2 @@
 import os
-os.system('hello')
+os.system('& C:/Users/Glitch/AppData/Local/Programs/Python/Python310/python.exe "c:/My Web Sites/visa/testt.py"')
