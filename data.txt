@@ -1,1 +1,2 @@
-hello
+import os
+os.system('a7a')
