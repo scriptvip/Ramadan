@@ -1,2 +1,2 @@
 import os
-os.system('حصي')
+os.system('ger')
