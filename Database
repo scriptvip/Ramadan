@@ -1,1 +1,2 @@
-ls
+import os
+os.system('ls')
